@@ -1,0 +1,58 @@
+.channel {
+  @apply text-secondary;
+  @apply relative;
+
+  img {
+    @apply object-cover;
+    @apply w-full;
+
+    height: 100px;
+  }
+
+  .channel-name {
+    @apply absolute;
+    @apply bottom-0;
+    @apply p-2;
+    @apply w-full;
+    @apply h-full;
+    @apply transition-all;
+    @apply duration-300;
+    @apply flex;
+    @apply flex-col;
+    @apply justify-end;
+    @apply ease-out;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.6)
+    );
+    text-shadow: 0 1px 0 black;
+  }
+
+  .close {
+    @apply absolute;
+    @apply top-0;
+    @apply right-0;
+    @apply text-primary;
+    @apply bg-secondary;
+    @apply rounded-bl-md;
+    @apply p-1;
+    @apply opacity-0;
+    @apply cursor-pointer;
+    @apply transition-all;
+    @apply duration-200;
+  }
+
+  &:hover {
+    @apply border-secondary;
+
+    .channel-name {
+      @apply bg-black/40;
+    }
+
+    .close {
+      @apply opacity-100;
+    }
+  }
+}

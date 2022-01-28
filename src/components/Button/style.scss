@@ -1,0 +1,25 @@
+.btn {
+  @apply px-3;
+  @apply py-2;
+  @apply rounded-md;
+  @apply appearance-none;
+  @apply outline-none;
+
+  &.btn-primary {
+    @apply bg-primary;
+    @apply text-white;
+
+    &:hover {
+      @apply bg-primary-darken;
+    }
+  }
+
+  &.btn-secondary {
+    @apply bg-secondary;
+    @apply text-primary;
+
+    &:hover {
+      @apply bg-secondary-darken;
+    }
+  }
+}

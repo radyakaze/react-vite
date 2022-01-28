@@ -1,0 +1,33 @@
+.app-footer {
+  @apply mt-16;
+  @apply border-t;
+  @apply border-secondary;
+  @apply py-6;
+
+  .footer-menu {
+    @apply text-secondary;
+    @apply text-sm;
+
+    ul {
+      li {
+        @apply inline-block;
+
+        &:not(:last-child) {
+          @apply mr-3;
+
+          &:after {
+            @apply ml-3;
+
+            content: '/';
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    @apply mt-4;
+    @apply text-secondary;
+    @apply text-sm;
+  }
+}
