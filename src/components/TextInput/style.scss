@@ -1,0 +1,24 @@
+.text-input-component {
+  @apply px-3;
+  @apply py-2;
+  @apply rounded-md;
+  @apply appearance-none;
+  @apply outline-none;
+  @apply w-full;
+
+  &[type=search] {
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      @apply hidden;
+    }
+
+    @apply bg-no-repeat;
+    @apply pr-4;
+
+    background-image: url("@/assets/search_icon.svg?component");
+    background-size: 20px;
+    background-position: right 0.5rem center;
+  }
+}

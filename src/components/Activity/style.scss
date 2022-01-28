@@ -1,0 +1,53 @@
+.activity {
+  @apply text-secondary;
+  @apply flex;
+  @apply p-2;
+  @apply border;
+  @apply border-transparent;
+  @apply transition-all;
+  @apply duration-200;
+  @apply relative;
+
+  .image {
+    @apply mr-3;
+    @apply self-center;
+
+    img {
+      @apply object-cover;
+      @apply w-full;
+
+      max-width: 80px;
+      max-height: 67px;
+    }
+  }
+
+  .activity-name {
+    @apply text-xs;
+  }
+
+  .content {
+    @apply text-xs;
+  }
+
+  .close {
+    @apply absolute;
+    @apply top-0;
+    @apply right-0;
+    @apply text-primary;
+    @apply bg-secondary;
+    @apply rounded-bl-md;
+    @apply p-1;
+    @apply opacity-0;
+    @apply cursor-pointer;
+    @apply transition-all;
+    @apply duration-200;
+  }
+
+  &:hover {
+    @apply border-secondary;
+
+    .close {
+      @apply opacity-100;
+    }
+  }
+}

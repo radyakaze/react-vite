@@ -1,0 +1,139 @@
+.post-grid-component {
+  @apply grid;
+  @apply grid-cols-3;
+
+  > div {
+    @apply flex;
+    @apply justify-between;
+    @apply col-span-3 md:col-span-2;
+    @apply pr-1;
+    @apply text-secondary;
+    @apply mb-2;
+    @apply items-end;
+  }
+}
+
+.post-grid-wrapper {
+  @apply grid;
+  @apply grid-cols-2 md:grid-cols-3;
+  @apply gap-3;
+
+  .post {
+    @apply relative;
+
+    img {
+      @apply max-h-full;
+      @apply object-cover;
+      @apply w-full;
+
+      height: 170px;
+    }
+
+    .content {
+      @apply absolute;
+      @apply bottom-0;
+      @apply p-3;
+      @apply text-secondary;
+      @apply w-full;
+      @apply h-full;
+      @apply transition-all;
+      @apply duration-300;
+      @apply flex;
+      @apply flex-col;
+      @apply justify-end;
+      @apply ease-out;
+
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.6)
+      );
+      text-shadow: 0 1px 0 black;
+
+      .title {
+        @apply text-xl;
+        @apply hidden;
+      }
+
+      .author {
+        @apply text-sm;
+      }
+
+      .views {
+        @apply text-sm;
+        @apply hidden;
+
+        .view-text {
+          @apply hidden;
+        }
+
+        .view-icon {
+          @apply hidden;
+        }
+      }
+    }
+
+    &:nth-child(1) {
+      @apply col-span-2;
+
+      img {
+        @apply aspect-video;
+        @apply h-auto;
+
+        @screen md {
+          @apply h-full;
+          @apply aspect-auto;
+        }
+      }
+
+      @screen md {
+        @apply col-span-2;
+        @apply row-span-2;
+      }
+
+      .content {
+        .title {
+          @apply block;
+        }
+
+        .views {
+          @apply block;
+        }
+      }
+    }
+
+    &:hover {
+      .content {
+        @apply bg-black/40;
+      }
+
+      .content {
+        .title {
+          @apply block;
+        }
+      }
+
+      &:not(:nth-child(1)) {
+        .views {
+          @apply block;
+          @apply absolute;
+          @apply top-1;
+          @apply right-2;
+        }
+      }
+    }
+  }
+
+  .post-action {
+    @apply flex justify-center items-center bg-primary border border-secondary text-secondary text-base py-3 md:py-5 px-5;
+    @apply col-span-2 md:col-span-1;
+    @apply transition-all;
+    @apply duration-300;
+    @apply cursor-pointer;
+
+    &:hover {
+      @apply bg-primary-darken;
+      @apply text-secondary-darken;
+    }
+  }
+}

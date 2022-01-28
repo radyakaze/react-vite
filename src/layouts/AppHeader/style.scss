@@ -1,0 +1,29 @@
+.app-header {
+  @apply py-3 md:py-6;
+  @apply md:flex;
+  @apply items-center;
+
+  .brand {
+    @apply mb-4 md:mb-0;
+    @apply md:mr-8;
+
+    .hamburger-menu {
+      @apply block md:hidden;
+
+      z-index: 100;
+    }
+  }
+
+  .right {
+    @apply flex-grow;
+    @apply flex;
+    @apply lg:grid;
+    @apply lg:grid-cols-5;
+    @apply lg:gap-4;
+
+    .global-search {
+      @apply mr-2;
+      @apply lg:col-span-3;
+    }
+  }
+}

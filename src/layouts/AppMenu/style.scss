@@ -1,0 +1,84 @@
+.app-menu {
+  @apply py-2.5;
+  @apply md:border-t;
+  @apply md:border-b;
+  @apply md:border-secondary;
+  @apply md:mb-7;
+  @apply hidden md:block;
+
+  ul {
+    li {
+      @apply text-secondary;
+    }
+  }
+
+  @screen md {
+    ul {
+      li {
+        @apply inline;
+
+        &:not(:last-child) {
+          @apply mr-2;
+
+          &::after {
+            @apply ml-2;
+            content: '/'
+          }
+        }
+
+        a {
+          &:hover {
+            @apply underline;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    @apply transform;
+    @apply ease-in-out;
+    @apply transition-all;
+    @apply duration-300;
+    @apply translate-x-full;
+    @apply bg-black/75;
+    @apply fixed;
+    @apply top-0;
+    @apply left-0;
+    @apply h-screen;
+    @apply w-screen;
+    @apply z-50;
+    @apply block;
+
+    ul {
+      @apply flex;
+      @apply items-center;
+      @apply justify-center;
+      @apply flex-col;
+      @apply h-screen;
+
+      li {
+        @apply block;
+        @apply text-2xl;
+        @apply font-light;
+        @apply w-screen;
+        @apply text-center;
+
+        a {
+          @apply p-3;
+          @apply block;
+
+          &:hover {
+            @apply bg-secondary/20;
+          }
+        }
+      }
+    }
+
+    &.active {
+      @apply translate-x-0;
+      @apply overflow-hidden;
+      @apply overscroll-contain;
+    }
+  }
+}
